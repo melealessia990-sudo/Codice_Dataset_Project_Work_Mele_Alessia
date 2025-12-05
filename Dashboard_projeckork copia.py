@@ -20,10 +20,7 @@ import plotly.graph_objects as go
     - Umidita_%
     - Pioggia_mm
 """
-# Prima:
-# df = pd.read_csv("dataset_projectwork.csv", encoding="utf-8")
 
-# Dopo:
 df = pd.read_csv("dataset_projectwork.csv", encoding="utf-8")
 
 
@@ -95,7 +92,7 @@ app.layout = html.Div([
 
     html.Label("Seleziona il tipo di analisi"),
     dcc.Dropdown(
-        id="tipo_analisi",        # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< QUI !!!
+        id="tipo_analisi",        
         value=None,
         clearable=False,
         style={"width": "50%"}
@@ -142,7 +139,7 @@ def aggiorna_dropdown(sezione):
     - options (list): lista di dizionari {'label': str, 'value': str} da mostrare nel dropdown
     - default (str): valore di default selezionato nel dropdown
     """
-    if sezione == "economica":
+    if sezione == "economica":  #SEZIONE ECONOMICA
         options = [
             {"label": "Ricavi mensili (€)", "value": "ricavo"},
             {"label": "Costi mensili (€)", "value": "costo"},
@@ -152,7 +149,7 @@ def aggiorna_dropdown(sezione):
         ]
         default = "ricavo"
 
-    elif sezione == "ambientale":
+    elif sezione == "ambientale":    #SEZIONE AMBIENTALE
         options = [
             {"label": "Temperatura media (°C)", "value": "temperatura"},
             {"label": "Umidità media (%)", "value": "umidita"},
@@ -160,7 +157,7 @@ def aggiorna_dropdown(sezione):
         ]
         default = "temperatura"
 
-    else:  # PROFITTO vs AMBIENTE
+    else:  #PROFITTO vs AMBIENTE
         options = [
             {"label": "Temperatura vs Profitto", "value": "temperatura"},
             {"label": "Umidità vs Profitto", "value": "umidita"},

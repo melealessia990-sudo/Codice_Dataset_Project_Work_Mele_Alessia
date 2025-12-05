@@ -179,13 +179,13 @@ fig.add_trace(go.Scatter(
     name="Margine medio (%)",
     mode="lines+markers",
     yaxis="y2",
-    hovertemplate="%{y:.2%}<extra></extra>" # Changed to percentage format
+    hovertemplate="%{y:.2%}<extra></extra>" 
 ))
 
 fig.update_layout(
     title="Indicatori economici mensili - Ricavi / Costi / Profitto e Margine%",
     xaxis=dict(title="Mese"),
-    yaxis=dict(title="Valori (€)"), # Corrected 'tile' to 'title'
+    yaxis=dict(title="Valori (€)"), 
     yaxis2= dict (
         title="Margine medio (%)",
         overlaying="y",

@@ -35,10 +35,6 @@ if df["Data"].isna().any():
 
 
 # Creazione colonne utili per analisi mensile e trimestrale
-""" 
-- 'mese': periodo in formato 'YYYY-MM' per aggregazioni mensili
-- 'trimestre': numero del trimestre (1-4) per filtraggio
-"""
 df["mese"] = df["Data"].dt.to_period("M").astype(str)
 df["trimestre"] = df["Data"].dt.quarter
 
